@@ -1,10 +1,23 @@
-# Generating PDF Invoices from Excel using FPDF and pandas
-This code generates PDF invoices from Excel files in a directory, using the FPDF library and pandas library. The invoices include a table of product information and a total price, and are saved in a different directory.
-# What I Learned?
-- Understanding how to use the FPDF library to generate PDFs with various formatting options, such as setting the font and adding text and images.
-- Understanding how to use the pandas library to read and manipulate data from Excel files.
-- Understanding how to use the glob library to find and iterate through multiple files in a directory.
-- Understanding how to use the pathlib library to extract information from file paths, such as the file name.
-- Understanding how to use the openpyxl library to handle Excel files
-- Understanding how to work with data and how to create tables and cell formatting in PDF.
-- Understanding how to use the output method and how to save PDF to a specific directory.
+# Invoice Generator
+This script generates invoices from Excel files in the invoice directory and saves the resulting PDFs in the PDFs directory.
+
+# Requirements
+- fpdf library for creating PDFs
+- pandas library for working with Excel files
+- glob library for searching for files in a directory
+- openpyxl library for working with Excel files
+- pathlib library for manipulating file paths
+
+#Usage
+- Place Excel files in the invoice directory. The file name should be in the format of invoice-number-date.xlsx
+- Run the script using python scriptname.py
+- The resulting PDFs will be in the PDFs directory, with the same name as the Excel file.
+Customization
+- You can change the company name and logo by replacing the pythonhow.png file and updating the pdf.cell(w=25, h=8, txt="PythonHow", align="L") line with your desired name.
+- You can adjust the format and layout of the PDF by editing the fpdf commands in the script.
+
+#Note
+-The script assumes that the excel files have 4 columns named product_id, product_name, amount_purchased, price_per_unit and total_price, any other columns will cause the script to fail.
+- The script assumes that the Excel files have one sheet named Sheet 1
+- The script assumes that the PDFs will be saved in the PDFs directory, if the directory doesn't exist it will be created.
+- The script assumes that the invoice number and date is separated by - in the file name.
